@@ -8,7 +8,7 @@ public interface StudentRepository {
 
     List<Student> getAllStudents();
 
-    Student getStudentById(int studentId);  // Return Student directly
+    Student getStudentById(int studentId);
 
     int createStudent(Student student);
 

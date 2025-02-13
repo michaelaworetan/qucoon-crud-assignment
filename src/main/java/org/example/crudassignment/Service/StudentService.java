@@ -32,7 +32,7 @@ public class StudentService {
     // Create a new student
     public int createStudent(StudentCreateRequest request) {
         Gson gson = new Gson();
-        // Convert CreateRequest to Student entity
+        // Converts CreateRequest to Student entity
         var student = gson.fromJson(gson.toJson(request), Student.class);
         return studentRepository.createStudent(student);
     }
@@ -46,8 +46,7 @@ public class StudentService {
             existingStudent.setStudentName(request.getStudentName());
             existingStudent.setStudentEmail(request.getStudentEmail());
             existingStudent.setStudentAge(request.getStudentAge());
-            existingStudent.setStudentUpdatedAt("GETDATE()"); // Update with current timestamp, you might change this logic
-
+            existingStudent.setStudentUpdatedAt("GETDATE()");
             // Perform the update operation
             return studentRepository.updateStudent(existingStudent);
         }
